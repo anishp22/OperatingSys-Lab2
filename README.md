@@ -1,5 +1,5 @@
 ## SOFE3950 OPERATING SYSTEMS LAB 3
-## Group 3
+### Group 3
 
 | Name             | Student Number |
 | ---------------- | -------------- |
@@ -20,3 +20,15 @@
 6. help - displays user manual
 7. pause - pauses opereation until 'Enter' key is pressed
 8. quit - exits the shell
+```
+
+#### How to Run the Shell
+
+```
+1. clone the repository
+2. open terminal
+3. navigate to repository
+4. type "make" into terminal
+5. run myshell by typing "./myshell"
+
+```
