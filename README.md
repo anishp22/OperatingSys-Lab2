@@ -11,16 +11,17 @@
 ### Command Line Interpreter: "myshell"
 
 #### Internal Commands
-```
-1. cd <directory> - changes current default directory to <directory>, reports current directory, and changes PWD environment variable
-2. clr - clears the screen
-3. dir <directory> - lists the contents of <directory>
-4. environ - lists the environment strings
-5. echo <message> - displays <message> on the terminal
-6. help - displays user manual
-7. pause - pauses opereation until 'Enter' key is pressed
-8. quit - exits the shell
-```
+
+1. `cd <directory>` - changes current default directory to <directory>, reports current directory, and changes PWD environment variable
+- `cd ..` - changes directory to parent directory 
+- `cd / ` - changes directory to root directory
+2. `clr` - clears the screen
+3. `dir <directory>` - lists the contents of <directory>
+4. `environ` - lists the environment strings
+5. `echo <message>` - displays <message> on the terminal
+6. `help` - displays user manual
+7. `pause` - pauses opereation until 'Enter' key is pressed
+8. `quit` - exits the shell
 
 #### How to Run the Shell
 
