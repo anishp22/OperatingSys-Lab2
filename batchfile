@@ -1,0 +1,11 @@
+dir
+cd ..
+cd OS_Lab2
+help
+environ
+echo hello
+pause
+dir
+cd /
+clr
+exit
