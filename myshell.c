@@ -14,14 +14,14 @@
 #define BUFFER_LEN 256
 #define SCREENBUFFER 100
 
-//global var
+// global variables below
 int pid;
 char shell[BUFFER_LEN];
 const char *prompt = "$";
 char pwd[BUFFER_LEN];
 
 
-//help manual
+// opens the README file and displays it to user
 void showHelp() {
 	FILE *f = fopen("README.md", "r");
 	char row[255];
@@ -43,12 +43,12 @@ int main(int argc, char *argv[]) {
 
 	pid = getpid();// get PID
 
-	//shell to path /prov/2636/exe
+	// shell to path /prov/2636/exe
 	char linkpath[50];
 	sprintf(linkpath, "/proc/%d/exe", pid);
 	readlink(linkpath, shell, BUFFER_LEN);
 
-	//batchfile pointer
+	// batchfile pointer
 	if (argc > 1) {
 		if ((batchfile = fopen(argv[1], "r")) == 0) {
 			perror(argv[1]);
@@ -56,7 +56,8 @@ int main(int argc, char *argv[]) {
 		}
 	}
 
-	//get user input 
+	// get user input
+	// infinite loop until user quits
 	while (1) {
 
 		// reset buffers
@@ -93,12 +94,12 @@ int main(int argc, char *argv[]) {
 		// remove newline char
 		token = strtok(buffer, "\n");
 		
-		//get input
+		// get input
 		token = strtok(buffer, " ");
 		strcpy(command, token);
 
 
-		// get arguments
+		// get arguments by tokenizing
 		token = strtok(NULL, " ");
 		if (token != NULL) {
 			strcpy(arg, token);
@@ -116,12 +117,12 @@ int main(int argc, char *argv[]) {
 			showHelp();
 		}
 		
-		//environ
+		// environ command
 		else if (strcmp(command, "environ") == 0) {
 			printf(" PID: %d\n SHELL: %s\n PWD: %s\n", pid, shell, pwd);
 		}		
 		
-		// cd
+		// cd command
 		else if (strcmp(command, "cd") == 0) {
 
 			//no path given
@@ -196,7 +197,7 @@ int main(int argc, char *argv[]) {
 
 		// invalid input
 		else {
-			fputs("Invalid command. Use help to assistance. \n", stderr);
+			fputs("Invalid command. Use 'help' for assistance. \n", stderr);
 		}
 	}
 
