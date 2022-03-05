@@ -22,7 +22,7 @@ A basic working shell created in C
 - `dir ..` - lists contents of parent directory
 - `dir /` - lists contents of root directory
 4. `environ` - lists the environment strings
-5. `echo <message>` - displays <message> on the terminal
+5. `echo <message>` - displays &lt;message&gt; on the terminal
 6. `help` - displays user manual
 7. `pause` - pauses opereation until 'Enter' key is pressed
 8. `quit` - exits the shell
